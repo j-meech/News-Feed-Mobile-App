@@ -7,7 +7,7 @@ import {
 } from 'react-native';
 import { Entypo } from '@expo/vector-icons';
 import { Platform } from 'react-native';
-import moment from 'moment';
+import Published from './Published';
 
 const isIOS = Platform.OS === 'ios';
 
@@ -34,7 +34,7 @@ class ArticleListItem extends Component {
 				<View style={styles.container}>
 					<View style={styles.headlineContainer}>
 						<Text style={styles.headline} numberOfLines={1}>{this.props.item.title}</Text>
-						<Text>{ moment(item.publishedAt).fromNow() }</Text>
+						<Published date={item.publishedAt}/>
 					</View>
 					{ isIOS ? 
 						<View style={styles.chevron}>
@@ -51,7 +51,7 @@ class ArticleListItem extends Component {
 const styles = StyleSheet.create({
 	articleItem: {
 		flexDirection: 'row',
-		height: 50,
+		height: 60,
 		backgroundColor: '#fff',
 		padding: 10,
 		alignItems: 'center',

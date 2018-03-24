@@ -4,7 +4,7 @@ import {
 	View,
 FlatList,
 } from 'react-native';
-import ArticleListItem from "./ArticleListItem";
+import ArticleListItem from './ArticleListItem';
 
 class ArticleList extends Component {
 

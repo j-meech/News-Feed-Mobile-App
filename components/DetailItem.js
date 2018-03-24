@@ -8,6 +8,7 @@ import {
 	Text,
 	TouchableOpacity,
 } from 'react-native';
+import Published from './Published';
 import { Constants, WebBrowser } from 'expo';
 
 class DetailItem extends Component {
@@ -34,6 +35,7 @@ class DetailItem extends Component {
     			}
     			<View style={styles.textContainer}>
 	    			<Text style={styles.headline}>{ item.title }</Text>
+	    			<Published date={item.publishedAt}/>
 	    			<View style={styles.divider}></View>
 	    			<Text style={styles.content}>{ item.description }</Text>
 		    		<TouchableOpacity style={styles.readMoreButton} onPress={this.onPress}>
@@ -60,7 +62,7 @@ const styles = StyleSheet.create({
 	divider: {
 		height: 1,
 		backgroundColor: '#ddd',
-		marginVertical: 10,
+		marginVertical: 15,
 	},
 	content: {
 		fontSize: 18,
