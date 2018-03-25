@@ -15,12 +15,17 @@ class DetailItem extends Component {
 
 	constructor(props) {
 		super(props);
-		this.onPress = this.onPress.bind(this);
+		this.readMoreLink = this.readMoreLink.bind(this);
+		this.attributionLink = this.attributionLink.bind(this);
 	}
 
-	onPress() {
+	readMoreLink() {
 		const { item } = this.props;
 		WebBrowser.openBrowserAsync(item.url);
+	}
+
+	attributionLink() {
+		WebBrowser.openBrowserAsync("https://newsapi.org/");
 	}
 	
 	render() {
@@ -38,8 +43,11 @@ class DetailItem extends Component {
 	    			<Published date={item.publishedAt}/>
 	    			<View style={styles.divider}></View>
 	    			<Text style={styles.content}>{ item.description }</Text>
-		    		<TouchableOpacity style={styles.readMoreButton} onPress={this.onPress}>
-		    			<Text style={styles.buttonText}>Read more...</Text>
+		    		<TouchableOpacity style={styles.readMoreLink} onPress={this.readMoreLink}>
+		    			<Text style={styles.readMoreText}>Read more...</Text>
+		    		</TouchableOpacity>
+		    		<TouchableOpacity style={styles.attributionLink} onPress={this.attributionLink}>
+		    			<Text style={styles.attributionLinkText}>Powered by News Api</Text>
 		    		</TouchableOpacity>
 	    		</View>
     		</ScrollView>
@@ -67,13 +75,20 @@ const styles = StyleSheet.create({
 	content: {
 		fontSize: 18,
 	},
-	readMoreButton: {
+	readMoreLink: {
 		marginTop: 20,
 	},
-	buttonText: {
+	readMoreText: {
 		fontSize: 18,
 		color: '#d35400'
-	}
+	},
+	attributionLink:{
+		marginVertical: 20,
+		// alignSelf: 'center',
+	},
+	attributionLinkText: {
+		color: '#919191',
+	},
 });
 
 
