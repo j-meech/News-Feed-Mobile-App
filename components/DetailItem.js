@@ -50,7 +50,7 @@ class DetailItem extends Component {
 const styles = StyleSheet.create({
 	itemImage: {
 		width: 320,
-		height: 230,
+		height: 210,
 	},
 	textContainer: {
 		margin: 20,

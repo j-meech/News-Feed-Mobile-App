@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
-import {
-
-} from 'react-native';
 import ArticleList from "../components/ArticleList";
-import articles from "../data/articles.json";
+//import articles from "../data/articles.json";
+import { connect } from "react-redux";
+import { getArticles } from "../data/api";
 
 class ArticleListScreen extends Component {
 
@@ -11,6 +10,10 @@ class ArticleListScreen extends Component {
 	  super(props);
 	  this.onPress = this.onPress.bind(this);
 	}
+
+	componentDidMount() {
+        this.props.onLoad();
+    }
 
 	onPress(item) {
 		this.props.navigation.navigate("Detail", {
@@ -21,10 +24,22 @@ class ArticleListScreen extends Component {
 	render() {
 		return (
 			<ArticleList 
-				articles={articles}
+				articles={this.props.articles}
 				onPress={this.onPress}/>
 		);
 	}
 }
 
-export default ArticleListScreen;
+const mapStateToProps = state => {
+    return {
+        articles: state.articles,
+    };
+};
+
+const mapDispatchToProps = dispatch => {
+    return {
+        onLoad: () => dispatch(getArticles()),
+    };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(ArticleListScreen);
