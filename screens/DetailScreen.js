@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import DetailItem from "../components/DetailItem";
+import DetailItem from '../components/DetailItem';
 
 class DetailScreen extends Component {
 

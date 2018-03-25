@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-
 import {
 	StyleSheet,
 	View,
@@ -84,7 +83,7 @@ const styles = StyleSheet.create({
 	},
 	attributionLink:{
 		marginVertical: 20,
-		// alignSelf: 'center',
+		alignSelf: 'center',
 	},
 	attributionLinkText: {
 		color: '#919191',

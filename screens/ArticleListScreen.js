@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import ArticleList from "../components/ArticleList";
+import ArticleList from '../components/ArticleList';
 //import articles from "../data/articles.json";
-import { connect } from "react-redux";
-import { getArticles } from "../data/api";
+import { connect } from 'react-redux';
+import { getArticles } from '../data/api';
 
 class ArticleListScreen extends Component {
 
@@ -16,7 +16,7 @@ class ArticleListScreen extends Component {
     }
 
 	onPress(item) {
-		this.props.navigation.navigate("Detail", {
+		this.props.navigation.navigate('Detail', {
 			item: item,
 		});
 	}

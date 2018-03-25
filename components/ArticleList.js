@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import {
 	StyleSheet,
 	View,
-FlatList,
+	FlatList,
 } from 'react-native';
 import ArticleListItem from './ArticleListItem';
 
@@ -42,10 +42,5 @@ class ArticleList extends Component {
 		);
 	}
 }
-
-const styles = StyleSheet.create({
-
-});
-
 
 export default ArticleList;

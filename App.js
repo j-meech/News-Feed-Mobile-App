@@ -1,13 +1,13 @@
 import React from 'react';
 import { StatusBar } from 'react-native';
 import { StackNavigator } from 'react-navigation';
-import ArticleListScreen from "./screens/ArticleListScreen";
-import DetailScreen from "./screens/DetailScreen";
-import { createStore, applyMiddleware, compose } from "redux";
+import ArticleListScreen from './screens/ArticleListScreen';
+import DetailScreen from './screens/DetailScreen';
+import { createStore, applyMiddleware, compose } from 'redux';
 import initial from './data/initial';
 import reducer from './data/reducer';
-import { Provider } from "react-redux";
-import thunk from "redux-thunk";
+import { Provider } from 'react-redux';
+import thunk from 'redux-thunk';
 
 StatusBar.setBarStyle('light-content');
 
